@@ -4,7 +4,7 @@ A lightweight, web-based patch management tool for Ubuntu and Debian servers —
 
 Manage your entire server fleet from a clean web UI: check for available updates, select packages, and trigger installations — all in your browser, with live console output streaming in real time.
 
-> **Language note:** The UI is in German. Contributions for translations are welcome!
+> **Language note:** The UI is in German or English
 
 ---
 
@@ -25,8 +25,6 @@ Manage your entire server fleet from a clean web UI: check for available updates
 - **Systemd service** — runs as a background service with auto-restart
 
 ---
-
-## 📸 Screenshots
 
 <details>
 <summary>Main view — host table with collapsible groups</summary>
@@ -64,7 +62,8 @@ On the **management server** (where aptsible runs):
 
 On the **managed hosts** (servers being patched):
 
-- Ubuntu 18.04+ or Debian 10+ (anything with `apt`)
+- Ubuntu 20.04+ or Debian 10+ (anything with `apt`)
+- RHEL/Rocky/CentOS
 - SSH access configured in Ansible inventory
 - SSH key-based authentication set up for the Ansible user
 
@@ -75,7 +74,7 @@ On the **managed hosts** (servers being patched):
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/aptsible.git
+git clone https://github.com/trexplorer/aptsible.git
 cd aptsible
 ```
 

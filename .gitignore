@@ -39,7 +39,8 @@ desktop.ini
 *.swp
 *.swo
 *~
-
+GITHUB_ANLEITUNG.md
+.gitignore
 config.ini
 # ── config.ini: the TEMPLATE (with PLACEHOLDER) is committed.
 # The live config in /opt/patchmanager/config.ini is NOT in the repo.
