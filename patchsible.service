@@ -1,0 +1,16 @@
+[Unit]
+Description=patchsible – Linux Patchmanagement
+Documentation=https://github.com/YOUR_USERNAME/patchsible
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/patchsible
+ExecStart=/opt/patchsible/venv/bin/python3 /opt/patchsible/app.py
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

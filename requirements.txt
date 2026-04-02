@@ -1,0 +1,4 @@
+flask>=2.3.0
+apscheduler>=3.10.0
+# python-pam: NICHT per pip – stattdessen: sudo apt install python3-pam
+# (install.sh erledigt das automatisch)

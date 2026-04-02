@@ -1,0 +1,65 @@
+# ═══════════════════════════════════════════════════════════
+#  patchsible – Linux Patchmanagement · Konfiguration
+#  Datei: /opt/patchsible/config.ini
+#  Nach Änderungen: sudo systemctl restart patchsible
+# ═══════════════════════════════════════════════════════════
+
+[server]
+# Netzwerk-Port des Webservers
+port = 5000
+
+# Netzwerkinterface:
+#   0.0.0.0  = auf allen Interfaces lauschen (Standard)
+#   127.0.0.1 = nur lokal erreichbar
+host = 0.0.0.0
+
+# Sprache / Language: de = Deutsch, en = English
+language = de
+
+
+[ssl]
+# HTTPS aktivieren (true / false)
+# Zertifikat wird von install.sh automatisch unter ./ssl/ erstellt
+enabled = false
+
+# Pfade zu Zertifikat und privatem Schlüssel
+certfile = /opt/patchsible/ssl/cert.pem
+keyfile  = /opt/patchsible/ssl/key.pem
+
+
+[auth]
+# Login-Schutz aktivieren (true / false)
+# Verwendet Linux-PAM – Linux-Benutzername + Passwort
+enabled = true
+
+# Zugriff auf Mitglieder einer bestimmten Gruppe beschränken
+# Gruppe manuell anlegen:
+#   sudo groupadd patchsible
+#   sudo usermod -aG patchsible dein-benutzername
+# Andere Beispiele: sudo, adm, wheel
+allowed_group = patchsible
+
+# Geheimer Session-Schlüssel (wird von install.sh generiert)
+# NICHT manuell ändern – wird für sichere Browser-Sessions benötigt
+secret_key = DEIN_SSH_KEY
+
+
+[ansible]
+# Pfad zur Ansible-Inventory-Datei
+# Standard: /etc/ansible/hosts
+# Alternativ: eigene Datei oder Verzeichnis angeben, z.B.
+#   inventory = /home/user/ansible/inventory.ini
+#   inventory = /etc/ansible/inventory/
+inventory = /etc/ansible/hosts
+
+# SSH-Benutzer für Ansible-Verbindungen (leer = Systemstandard / root)
+# Ändern wenn die SSH-Keys unter einem anderen Nutzer hinterlegt sind
+# Beispiel: user = deploy
+user =
+
+
+[check]
+# Automatische Update-Prüfung aller Hosts im Hintergrund
+# Intervall in Stunden (0 = deaktiviert)
+# Beim App-Start wird direkt geprüft wenn keine oder veraltete Daten vorliegen
+interval_hours = 4

@@ -1,0 +1,46 @@
+# ── Python ─────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ────────────────────────────────
+venv/
+.venv/
+env/
+
+# ── Database (contains cached host data) ───────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── SSL certificates (private key must never be committed)
+ssl/
+*.pem
+*.key
+*.crt
+*.p12
+
+# ── Logs ───────────────────────────────────────────────
+*.log
+
+# ── OS files ───────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor files ───────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+config.ini
+# ── config.ini: the TEMPLATE (with PLACEHOLDER) is committed.
+# The live config in /opt/patchmanager/config.ini is NOT in the repo.
+# If you accidentally copied a real config here, make sure secret_key = PLACEHOLDER
